@@ -7,12 +7,12 @@
 <meta name="description" content="Yuan Ruoqi — MSc FinTech @ NTU · Finance @ Xiamen University Malaysia · Equity Research">
 <meta name="theme-color" content="#f5f5f7">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#f5f5f7; --ink:#1d1d1f; --ink2:#424245; --muted:#86868b;
-    --glass:rgba(255,255,255,.42); --glass-strong:rgba(255,255,255,.62);
-    --stroke:rgba(255,255,255,.75); --shadow:0 8px 32px rgba(31,38,135,.08), 0 1px 0 rgba(255,255,255,.6) inset;
+    --bg:#dfe9f4;--navy:#14213d;--serif:"Noto Serif SC","Source Han Serif SC","Songti SC",Georgia,"Times New Roman",serif; --ink:#1d1d1f; --ink2:#424245; --muted:#86868b;
+    --glass:rgba(255,255,255,.66); --glass-strong:rgba(255,255,255,.8);
+    --stroke:rgba(255,255,255,.75); --shadow:0 10px 36px rgba(10,30,70,.16), 0 1px 0 rgba(255,255,255,.6) inset;
     --blue:#0071e3;
     --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter","PingFang SC","Noto Sans SC","Hiragino Sans GB","Helvetica Neue","Microsoft YaHei",Arial,sans-serif;
     --ease:cubic-bezier(.2,.8,.2,1);
@@ -25,13 +25,8 @@
 
   /* ---------- background ---------- */
   #gl{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;display:block}
-  .fallback{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
-  .fallback i{position:absolute;border-radius:50%;filter:blur(80px);opacity:.55;animation:drift 18s var(--ease) infinite alternate}
-  .fallback i:nth-child(1){width:46vw;height:46vw;background:#a5b4fc;left:48%;top:-6%}
-  .fallback i:nth-child(2){width:38vw;height:38vw;background:#f9a8d4;left:62%;top:28%;animation-delay:-6s}
-  .fallback i:nth-child(3){width:34vw;height:34vw;background:#99f6e4;left:8%;top:60%;animation-delay:-12s}
-  @keyframes drift{to{transform:translate3d(-8vw,6vh,0) scale(1.15)}}
-  body.has-gl .fallback{opacity:.35}
+  .fallback{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse at 30% 20%,#cfe2f3,transparent 60%),linear-gradient(180deg,#b9d4ec 0%,#5f93c9 55%,#1f467e 100%)}
+  body.has-gl .fallback{display:none}
   .grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.035;
     background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
   main,nav,footer{position:relative;z-index:2}
@@ -69,19 +64,17 @@
   /* ---------- layout ---------- */
   .wrap{width:min(1080px,calc(100% - 40px));margin:0 auto}
   section{padding:120px 0 0}
-  .kicker{font-size:17px;font-weight:600;color:var(--muted);letter-spacing:-.01em;margin-bottom:28px}
+  .kicker{display:inline-block;font-size:15px;font-weight:600;color:#3d4a66;letter-spacing:.02em;margin-bottom:24px;padding:7px 16px;border-radius:999px;background:rgba(255,255,255,.7);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
   h2{font-size:clamp(36px,5vw,56px);font-weight:600;letter-spacing:-.035em;line-height:1.05;margin-bottom:44px}
 
   /* hero */
-  .hero{min-height:92vh;display:flex;flex-direction:column;justify-content:center;padding-top:80px}
+  .hero{min-height:92vh;position:relative;display:flex;flex-direction:column;justify-content:center;padding-top:80px}
   .hero .tag{display:inline-flex;align-self:flex-start;align-items:center;gap:8px;font-size:13px;font-weight:500;padding:8px 16px;border-radius:999px;color:var(--ink2)}
   .dot{width:7px;height:7px;border-radius:50%;background:#30d158;box-shadow:0 0 0 0 rgba(48,209,88,.6);animation:pulse 2s infinite}
   @keyframes pulse{70%{box-shadow:0 0 0 8px rgba(48,209,88,0)}100%{box-shadow:0 0 0 0 rgba(48,209,88,0)}}
-  h1{font-size:clamp(44px,6.4vw,80px);font-weight:600;letter-spacing:-.035em;line-height:1.05;margin:0 0 18px}
-  h1 .shine{background:linear-gradient(100deg,#1d1d1f 20%,#6e6e73 40%,#1d1d1f 60%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite}
-  @keyframes shine{from{background-position:120% 0}to{background-position:-130% 0}}
-  .sub{font-size:clamp(19px,2.3vw,26px);color:var(--ink2);font-weight:500;letter-spacing:-.02em;max-width:640px;line-height:1.4}
-  .sub em{font-style:normal;background:linear-gradient(90deg,#0071e3,#a855f7,#ec4899);-webkit-background-clip:text;background-clip:text;color:transparent}
+  h1{font-family:var(--serif);font-size:clamp(42px,5.2vw,62px);font-weight:700;letter-spacing:.01em;line-height:1.15;color:var(--navy);margin:0}
+  h1 .alt{display:block;font-size:.42em;font-weight:400;color:#6b7489;letter-spacing:.04em;margin-top:8px}
+  .sub{margin-top:22px;font-size:18px;line-height:1.75;color:#3d4a66;max-width:620px;font-weight:400;letter-spacing:0}
   .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
   .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:999px;font-size:16px;font-weight:500;transition:transform .35s var(--ease),box-shadow .35s;will-change:transform}
   .btn.primary{background:var(--ink);color:#fff;box-shadow:0 10px 30px rgba(0,0,0,.18)}
@@ -89,10 +82,13 @@
   .btn.ghost{border-radius:999px}
   .btn svg{width:16px;height:16px;transition:transform .35s var(--ease)}
   .btn:hover svg{transform:translateX(3px)}
-  .scroll-hint{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);width:26px;height:42px;border-radius:14px;border:1.5px solid rgba(29,29,31,.25)}
-  .scroll-hint::after{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:rgba(29,29,31,.45);animation:wheel 1.8s infinite}
+  .scroll-hint{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);width:26px;height:42px;border-radius:14px;border:1.5px solid rgba(255,255,255,.7)}
+  .scroll-hint::after{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:rgba(255,255,255,.85);animation:wheel 1.8s infinite}
   @keyframes wheel{to{transform:translateY(14px);opacity:0}}
 
+  .hero::before{content:"";position:absolute;z-index:-1;left:-60px;top:50%;transform:translateY(-50%);width:min(780px,100%);height:460px;border-radius:36px;
+    background:rgba(251,250,247,.72);-webkit-backdrop-filter:blur(18px) saturate(140%);backdrop-filter:blur(18px) saturate(140%);
+    border:1px solid rgba(255,255,255,.7);box-shadow:0 20px 60px rgba(10,30,70,.18)}
   /* stats */
   .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
   .stat{padding:28px 26px}
@@ -129,7 +125,7 @@
   .row b{font-size:16px;font-weight:600;letter-spacing:-.01em}
   .copy{border:none;background:rgba(0,0,0,.06);border-radius:999px;padding:7px 13px;font:600 12px var(--font);color:var(--ink2);cursor:pointer;transition:background .2s}
   .copy:hover{background:rgba(0,0,0,.12)}
-  footer{text-align:center;color:var(--muted);font-size:12px;padding:56px 0 40px}
+  footer{text-align:center;color:rgba(255,255,255,.8);font-size:12px;padding:56px 0 40px}
 
   /* reveal */
   .rv{opacity:0;transform:translateY(40px) scale(.98);filter:blur(8px);transition:opacity 1s var(--ease),transform 1s var(--ease),filter 1s var(--ease)}
@@ -152,7 +148,7 @@
 </head>
 <body>
 <canvas id="gl" aria-hidden="true"></canvas>
-<div class="fallback" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="fallback" aria-hidden="true"></div>
 <div class="grain" aria-hidden="true"></div>
 
 <nav>
@@ -171,10 +167,13 @@
 <main id="top">
   <!-- HERO -->
   <header class="hero wrap">
-    <h1 class="rv"><span class="shine" data-l="zh">袁若琦</span><span class="shine" data-l="en">Yuan Ruoqi</span></h1>
+    <h1 class="rv">
+      <span data-l="zh">袁若琦<span class="alt">Yuan Ruoqi</span></span>
+      <span data-l="en">Yuan Ruoqi<span class="alt">袁若琦</span></span>
+    </h1>
     <p class="sub rv">
-      <span data-l="zh">金融科技 × 行业研究。<br>NTU 硕士在读，<em>用数据读懂市场。</em></span>
-      <span data-l="en">FinTech × Equity Research.<br>MSc at NTU, <em>reading markets through data.</em></span>
+      <span data-l="zh">南洋理工大学金融科技硕士在读，厦门大学马来西亚分校金融学本科（Top 10%）。拥有多段头部券商行业研究实习经历，擅长数据驱动的基本面研究与研报撰写。</span>
+      <span data-l="en">MSc Financial Technology candidate at Nanyang Technological University, with a Bachelor of Finance (Top 10%) from Xiamen University Malaysia. Equity research experience at leading securities firms, focused on data-driven fundamental analysis and research writing.</span>
     </p>
     <div class="cta rv">
       <a class="btn primary mag" href="#contact"><span data-l="zh">联系我</span><span data-l="en">Get in touch</span>
@@ -392,81 +391,65 @@ document.querySelectorAll('.copy').forEach(function(b){
   document.querySelectorAll('section[id]').forEach(function(s){io.observe(s)});
 })();
 
-/* ---------- Three.js liquid glass blob ---------- */
+/* ---------- Three.js oil-painting ocean ---------- */
 (function(){
   if(!window.THREE)return;
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   var canvas=document.getElementById('gl'),renderer;
-  try{renderer=new THREE.WebGLRenderer({canvas:canvas,antialias:true,alpha:true})}catch(e){return}
+  try{renderer=new THREE.WebGLRenderer({canvas:canvas,antialias:false,alpha:false,powerPreference:'high-performance'})}catch(e){return}
   document.body.classList.add('has-gl');
-  renderer.setPixelRatio(Math.min(devicePixelRatio,2));
-  var scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(35,1,.1,100);camera.position.z=6;
-
-  var noise=[
-  'vec3 mod289(vec3 x){return x-floor(x*(1./289.))*289.;}vec4 mod289(vec4 x){return x-floor(x*(1./289.))*289.;}',
-  'vec4 permute(vec4 x){return mod289(((x*34.)+1.)*x);}vec4 taylorInvSqrt(vec4 r){return 1.79284291400159-.85373472095314*r;}',
-  'float snoise(vec3 v){const vec2 C=vec2(1./6.,1./3.);const vec4 D=vec4(0.,.5,1.,2.);vec3 i=floor(v+dot(v,C.yyy));vec3 x0=v-i+dot(i,C.xxx);',
-  'vec3 g=step(x0.yzx,x0.xyz);vec3 l=1.-g;vec3 i1=min(g.xyz,l.zxy);vec3 i2=max(g.xyz,l.zxy);vec3 x1=x0-i1+C.xxx;vec3 x2=x0-i2+C.yyy;vec3 x3=x0-D.yyy;',
-  'i=mod289(i);vec4 p=permute(permute(permute(i.z+vec4(0.,i1.z,i2.z,1.))+i.y+vec4(0.,i1.y,i2.y,1.))+i.x+vec4(0.,i1.x,i2.x,1.));',
-  'float n_=.142857142857;vec3 ns=n_*D.wyz-D.xzx;vec4 j=p-49.*floor(p*ns.z*ns.z);vec4 x_=floor(j*ns.z);vec4 y_=floor(j-7.*x_);',
-  'vec4 x=x_*ns.x+ns.yyyy;vec4 y=y_*ns.x+ns.yyyy;vec4 h=1.-abs(x)-abs(y);vec4 b0=vec4(x.xy,y.xy);vec4 b1=vec4(x.zw,y.zw);',
-  'vec4 s0=floor(b0)*2.+1.;vec4 s1=floor(b1)*2.+1.;vec4 sh=-step(h,vec4(0.));vec4 a0=b0.xzyw+s0.xzyw*sh.xxyy;vec4 a1=b1.xzyw+s1.xzyw*sh.zzww;',
-  'vec3 p0=vec3(a0.xy,h.x);vec3 p1=vec3(a0.zw,h.y);vec3 p2=vec3(a1.xy,h.z);vec3 p3=vec3(a1.zw,h.w);',
-  'vec4 norm=taylorInvSqrt(vec4(dot(p0,p0),dot(p1,p1),dot(p2,p2),dot(p3,p3)));p0*=norm.x;p1*=norm.y;p2*=norm.z;p3*=norm.w;',
-  'vec4 m=max(.6-vec4(dot(x0,x0),dot(x1,x1),dot(x2,x2),dot(x3,x3)),0.);m=m*m;return 42.*dot(m*m,vec4(dot(p0,x0),dot(p1,x1),dot(p2,x2),dot(p3,x3)));}'
-  ].join('\n');
-
-  var uniforms={uTime:{value:0},uAmp:{value:.32},uMouse:{value:new THREE.Vector2()}};
-  var mat=new THREE.ShaderMaterial({uniforms:uniforms,transparent:true,
-    vertexShader:noise+[
-      'uniform float uTime;uniform float uAmp;uniform vec2 uMouse;varying vec3 vN;varying vec3 vV;varying float vD;',
-      'float f(vec3 p){return snoise(p*1.1+vec3(uTime*.18,uTime*.12,uTime*.1)+vec3(uMouse,0.)*.6)*uAmp+snoise(p*2.6-uTime*.15)*uAmp*.25;}',
-      'void main(){vec3 p=position;float d=f(normalize(p));vec3 np=p+normal*d;',
-      'vec3 t=normalize(cross(normal,vec3(0.,1.,0.)+vec3(.001)));vec3 b=normalize(cross(normal,t));float e=.01;',
-      'vec3 pa=normalize(p+t*e);vec3 pb=normalize(p+b*e);vec3 na=pa*(1.+f(pa));vec3 nb=pb*(1.+f(pb));',
-      'vec3 nn=normalize(cross(na-np,nb-np));vN=normalize(normalMatrix*nn);vec4 mv=modelViewMatrix*vec4(np,1.);vV=normalize(-mv.xyz);vD=d;gl_Position=projectionMatrix*mv;}'
-    ].join('\n'),
+  var DPR=Math.min(devicePixelRatio,1.5);renderer.setPixelRatio(DPR);
+  var scene=new THREE.Scene(),camera=new THREE.OrthographicCamera(-1,1,1,-1,0,1);
+  var uniforms={uTime:{value:0},uRes:{value:new THREE.Vector2(1,1)},uMouse:{value:new THREE.Vector2(.5,.5)},uScroll:{value:0}};
+  var mat=new THREE.ShaderMaterial({uniforms:uniforms,
+    vertexShader:'varying vec2 vUv;void main(){vUv=uv;gl_Position=vec4(position.xy,0.,1.);}',
     fragmentShader:[
-      'uniform float uTime;varying vec3 vN;varying vec3 vV;varying float vD;',
-      'vec3 pal(float t){return .55+.45*cos(6.28318*(vec3(1.)*t+vec3(.0,.33,.67)));}',
-      'void main(){vec3 n=normalize(vN);float fr=pow(1.-max(dot(n,vV),0.),2.2);',
-      'float t=dot(n,vec3(.4,.6,.2))*.6+vD*1.2+uTime*.05;vec3 iri=pal(t);',
-      'vec3 base=mix(vec3(.93,.94,1.),iri,.55);',
-      'vec3 L=normalize(vec3(-.4,.8,.6));vec3 H=normalize(L+vV);float spec=pow(max(dot(n,H),0.),80.)*1.4;',
-      'vec3 L2=normalize(vec3(.7,-.3,.5));float spec2=pow(max(dot(n,normalize(L2+vV)),0.),30.)*.35;',
-      'vec3 col=base*(.75+.25*dot(n,L))+iri*fr*.9+vec3(spec+spec2);',
-      'float a=.55+fr*.45;gl_FragColor=vec4(col,a);}'
+      'precision highp float;uniform float uTime;uniform vec2 uRes;uniform vec2 uMouse;uniform float uScroll;varying vec2 vUv;',
+      'float hash(vec2 p){p=fract(p*vec2(123.34,456.21));p+=dot(p,p+45.32);return fract(p.x*p.y);}',
+      'float noise(vec2 p){vec2 i=floor(p),f=fract(p);vec2 u=f*f*(3.-2.*f);',
+      ' return mix(mix(hash(i),hash(i+vec2(1,0)),u.x),mix(hash(i+vec2(0,1)),hash(i+vec2(1,1)),u.x),u.y);}',
+      'float fbm(vec2 p){float v=0.,a=.5;mat2 r=mat2(.8,.6,-.6,.8);for(int i=0;i<5;i++){v+=a*noise(p);p=r*p*2.02+vec2(1.7,9.2);a*=.5;}return v;}',
+      'void main(){',
+      ' float asp=uRes.x/uRes.y;vec2 uv=vUv;vec2 p=vec2(uv.x*asp,uv.y);',
+      ' float t=uTime*.06;',
+      // horizontal sea: stretch vertically, drift with scroll
+      ' vec2 sp=vec2(p.x*1.6,p.y*4.2+uScroll*1.5);',
+      ' vec2 m=uMouse;m.x*=asp;float md=exp(-6.*distance(p,m));',
+      ' vec2 q=vec2(fbm(sp+vec2(t,0.)),fbm(sp+vec2(5.2,1.3)-vec2(t*.8,0.)));',
+      ' vec2 r=vec2(fbm(sp+3.5*q+vec2(1.7,9.2)+vec2(t*1.4,0.)),fbm(sp+3.5*q+vec2(8.3,2.8)-vec2(t*1.1,0.)));',
+      ' r+=md*.35*vec2(sin(uTime*.8),cos(uTime*.7));',
+      ' float f=fbm(sp+3.2*r);',
+      // brush strokes: streaks aligned with flow direction
+      ' float ang=atan(r.y-.5,r.x-.5)*.35;mat2 R=mat2(cos(ang),-sin(ang),sin(ang),cos(ang));',
+      ' vec2 bp=R*(p*vec2(7.,70.));float stroke=noise(bp+vec2(t*6.,0.))*.6+noise(bp*1.9-vec2(t*4.,0.))*.4;',
+      // posterize like paint dabs
+      ' float bands=7.;float fq=floor(f*bands+stroke*.9)/bands;float v=mix(f,fq,.55);',
+      ' v+= (stroke-.5)*.12;',
+      // oil palette: deep ultramarine -> prussian -> cerulean -> pale sky -> foam
+      ' vec3 c0=vec3(.07,.16,.36),c1=vec3(.13,.30,.58),c2=vec3(.24,.49,.78),c3=vec3(.56,.75,.91),c4=vec3(.86,.93,.98);',
+      ' vec3 col=mix(c0,c1,smoothstep(.18,.38,v));col=mix(col,c2,smoothstep(.36,.52,v));col=mix(col,c3,smoothstep(.5,.66,v));',
+      ' float foam=smoothstep(.66,.74,v+stroke*.06);col=mix(col,c4,foam*.9);',
+      // lighter near horizon/top for readability, painterly light
+      ' col=mix(col,c4,smoothstep(.55,1.1,uv.y)*.35);',
+      ' col+=vec3(.9,.95,1.)*md*.08;',
+      // canvas weave + grain
+      ' float weave=(sin(gl_FragCoord.x*1.3)*sin(gl_FragCoord.y*1.3))*.012;float grain=(hash(gl_FragCoord.xy+fract(uTime))-.5)*.035;',
+      ' col+=weave+grain;',
+      ' float vig=smoothstep(1.25,.35,length((uv-.5)*vec2(asp*.7,1.)));col*=mix(.82,1.,vig);',
+      ' gl_FragColor=vec4(col,1.);}'
     ].join('\n')});
-  var blob=new THREE.Mesh(new THREE.IcosahedronGeometry(1.35,reduce?32:96),mat);scene.add(blob);
-
-  // floating glass bubbles
-  var bubbles=[],bm=new THREE.ShaderMaterial({uniforms:{uTime:uniforms.uTime,uAmp:{value:.07},uMouse:uniforms.uMouse},transparent:true,vertexShader:mat.vertexShader,fragmentShader:mat.fragmentShader});
-  [[-2.6,1.4,-1.5,.28],[2.9,-1.6,-1,.36],[-2.2,-1.9,.2,.18],[1.6,2.1,-2,.22]].forEach(function(b){
-    var m=new THREE.Mesh(new THREE.IcosahedronGeometry(b[3],24),bm);m.position.set(b[0],b[1],b[2]);m.userData.o=m.position.clone();m.userData.s=Math.random()*6;scene.add(m);bubbles.push(m)});
-
-  var mouse=new THREE.Vector2(),sm=new THREE.Vector2(),scrollY=0,sy=0,w,h;
-  addEventListener('pointermove',function(e){mouse.set(e.clientX/innerWidth*2-1,-(e.clientY/innerHeight*2-1))});
-  addEventListener('scroll',function(){scrollY=window.scrollY},{passive:true});
-  function resize(){w=innerWidth;h=innerHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()}
+  scene.add(new THREE.Mesh(new THREE.PlaneGeometry(2,2),mat));
+  var mouse=new THREE.Vector2(.5,.5),sm=new THREE.Vector2(.5,.5),sc=0,ss=0;
+  addEventListener('pointermove',function(e){mouse.set(e.clientX/innerWidth,1.-e.clientY/innerHeight)});
+  addEventListener('scroll',function(){sc=window.scrollY/innerHeight},{passive:true});
+  function resize(){renderer.setSize(innerWidth,innerHeight,false);uniforms.uRes.value.set(innerWidth*DPR,innerHeight*DPR)}
   addEventListener('resize',resize);resize();
-
   var clock=new THREE.Clock(),visible=true;
   document.addEventListener('visibilitychange',function(){visible=!document.hidden});
-  function loop(){
-    requestAnimationFrame(loop);if(!visible)return;
-    var t=clock.getElapsedTime();
-    sm.lerp(mouse,.05);sy+=(scrollY-sy)*.08;
-    var prog=Math.min(1,sy/(document.body.scrollHeight-innerHeight||1));
-    uniforms.uTime.value=reduce?0:t;uniforms.uMouse.value.copy(sm);
-    uniforms.uAmp.value=.28+Math.sin(prog*Math.PI)*.18;
-    var mobile=w<820,baseX=mobile?0:1.55;
-    blob.position.x=baseX*(1-prog*1.4)+sm.x*.25;
-    blob.position.y=(mobile?.9:0)-prog*.6+sm.y*.2+Math.sin(t*.6)*.06;
-    blob.rotation.y=t*.08+sm.x*.4+prog*2.5;blob.rotation.x=sm.y*.3+prog*1.2;
-    var s=(mobile?.75:1)*(1-prog*.25);blob.scale.setScalar(s);
-    bubbles.forEach(function(b,i){var o=b.userData.o;b.position.set(o.x+Math.sin(t*.4+b.userData.s)*.25-sm.x*.3*(i+1)*.3,o.y+Math.cos(t*.5+b.userData.s)*.25-sm.y*.3+prog*(i%2?1.5:-1.2),o.z)});
-    renderer.render(scene,camera);
-  }
+  function loop(){requestAnimationFrame(loop);if(!visible)return;
+    sm.lerp(mouse,.04);ss+=(sc-ss)*.06;
+    uniforms.uTime.value=reduce?8.:clock.getElapsedTime()+8.;uniforms.uMouse.value.copy(sm);uniforms.uScroll.value=ss*.35;
+    renderer.render(scene,camera);}
   loop();
 })();
 </script>
