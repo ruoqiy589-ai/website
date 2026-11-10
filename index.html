@@ -6,13 +6,15 @@
 <title>袁若琦 · Yuan Ruoqi</title>
 <meta name="description" content="Yuan Ruoqi — MSc FinTech @ NTU · Finance @ Xiamen University Malaysia · Equity Research">
 <meta name="theme-color" content="#f5f5f7">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#f5f5f7; --ink:#1d1d1f; --ink2:#424245; --muted:#86868b;
     --glass:rgba(255,255,255,.42); --glass-strong:rgba(255,255,255,.62);
     --stroke:rgba(255,255,255,.75); --shadow:0 8px 32px rgba(31,38,135,.08), 0 1px 0 rgba(255,255,255,.6) inset;
     --blue:#0071e3;
-    --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+    --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter","PingFang SC","Noto Sans SC","Hiragino Sans GB","Helvetica Neue","Microsoft YaHei",Arial,sans-serif;
     --ease:cubic-bezier(.2,.8,.2,1);
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -67,15 +69,15 @@
   /* ---------- layout ---------- */
   .wrap{width:min(1080px,calc(100% - 40px));margin:0 auto}
   section{padding:120px 0 0}
-  .kicker{font-size:14px;font-weight:600;color:var(--muted);letter-spacing:.02em;margin-bottom:10px}
-  h2{font-size:clamp(36px,5vw,56px);font-weight:700;letter-spacing:-.035em;line-height:1.05;margin-bottom:44px}
+  .kicker{font-size:17px;font-weight:600;color:var(--muted);letter-spacing:-.01em;margin-bottom:28px}
+  h2{font-size:clamp(36px,5vw,56px);font-weight:600;letter-spacing:-.035em;line-height:1.05;margin-bottom:44px}
 
   /* hero */
-  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:80px}
+  .hero{min-height:92vh;display:flex;flex-direction:column;justify-content:center;padding-top:80px}
   .hero .tag{display:inline-flex;align-self:flex-start;align-items:center;gap:8px;font-size:13px;font-weight:500;padding:8px 16px;border-radius:999px;color:var(--ink2)}
   .dot{width:7px;height:7px;border-radius:50%;background:#30d158;box-shadow:0 0 0 0 rgba(48,209,88,.6);animation:pulse 2s infinite}
   @keyframes pulse{70%{box-shadow:0 0 0 8px rgba(48,209,88,0)}100%{box-shadow:0 0 0 0 rgba(48,209,88,0)}}
-  h1{font-size:clamp(64px,12vw,148px);font-weight:700;letter-spacing:-.055em;line-height:.95;margin:26px 0 18px}
+  h1{font-size:clamp(44px,6.4vw,80px);font-weight:600;letter-spacing:-.035em;line-height:1.05;margin:0 0 18px}
   h1 .shine{background:linear-gradient(100deg,#1d1d1f 20%,#6e6e73 40%,#1d1d1f 60%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite}
   @keyframes shine{from{background-position:120% 0}to{background-position:-130% 0}}
   .sub{font-size:clamp(19px,2.3vw,26px);color:var(--ink2);font-weight:500;letter-spacing:-.02em;max-width:640px;line-height:1.4}
@@ -94,7 +96,7 @@
   /* stats */
   .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
   .stat{padding:28px 26px}
-  .stat b{display:block;font-size:clamp(40px,5vw,56px);font-weight:700;letter-spacing:-.04em;line-height:1}
+  .stat b{display:block;font-size:clamp(40px,5vw,56px);font-weight:600;letter-spacing:-.04em;line-height:1}
   .stat span{display:block;margin-top:10px;font-size:14px;color:var(--muted);font-weight:500}
 
   /* bento */
@@ -103,11 +105,14 @@
   .card:hover{box-shadow:0 24px 60px rgba(31,38,135,.14),0 1px 0 rgba(255,255,255,.6) inset}
   .c3{grid-column:span 3}.c2{grid-column:span 2}.c4{grid-column:span 4}.c6{grid-column:span 6}
   .card .when{font-size:13px;color:var(--muted);font-weight:500;font-variant-numeric:tabular-nums}
-  .card h3{font-size:24px;font-weight:700;letter-spacing:-.03em;margin:14px 0 4px}
+  .card ul{margin-top:18px;list-style:none}
+  .card li{position:relative;padding-left:16px;font-size:15px;color:var(--ink2);line-height:1.6;margin-bottom:9px}
+  .card li::before{content:"";position:absolute;left:0;top:.66em;width:5px;height:5px;border-radius:50%;background:linear-gradient(135deg,#0071e3,#a855f7)}
+  .card h3{font-size:24px;font-weight:600;letter-spacing:-.025em;margin:10px 0 4px}
   .card .role{font-size:15px;color:var(--ink2);font-weight:500}
   .card p{font-size:15px;color:var(--ink2);line-height:1.55;margin-top:16px}
   .logo-chip{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-weight:700;font-size:18px;color:#fff;box-shadow:0 6px 16px rgba(0,0,0,.12)}
-  .big-num{font-size:clamp(56px,7vw,84px);font-weight:700;letter-spacing:-.05em;line-height:1;background:linear-gradient(135deg,#0071e3,#a855f7 55%,#ec4899);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .big-num{font-size:clamp(52px,6vw,72px);font-weight:600;letter-spacing:-.05em;line-height:1;background:linear-gradient(135deg,#0071e3,#a855f7 55%,#ec4899);-webkit-background-clip:text;background-clip:text;color:transparent}
 
   .chips{display:flex;flex-wrap:wrap;gap:10px}
   .chip{padding:11px 20px;border-radius:999px;font-size:15px;font-weight:500;transition:transform .35s var(--ease)}
@@ -166,7 +171,6 @@
 <main id="top">
   <!-- HERO -->
   <header class="hero wrap">
-    <div class="tag glass rv"><i class="dot"></i><span data-l="zh">正在寻找新机会 · 新加坡</span><span data-l="en">Open to opportunities · Singapore</span></div>
     <h1 class="rv"><span class="shine" data-l="zh">袁若琦</span><span class="shine" data-l="en">Yuan Ruoqi</span></h1>
     <p class="sub rv">
       <span data-l="zh">金融科技 × 行业研究。<br>NTU 硕士在读，<em>用数据读懂市场。</em></span>
@@ -191,35 +195,74 @@
   <!-- WORK -->
   <section id="work" class="wrap">
     <div class="kicker rv"><span data-l="zh">实习经历</span><span data-l="en">Experience</span></div>
-    <h2 class="rv"><span data-l="zh">在一线研究市场。</span><span data-l="en">Research, on the front line.</span></h2>
     <div class="bento">
-      <div class="card glass c4 rv tilt">
-        <div class="logo-chip" style="background:linear-gradient(135deg,#1e3a8a,#3b82f6)">申</div>
-        <h3><span data-l="zh">申万宏源证券</span><span data-l="en">Shenwan Hongyuan Securities</span></h3>
-        <div class="role"><span data-l="zh">行业研究 · 军工组</span><span data-l="en">Industry Research · Defense</span></div>
+      <div class="card glass c3 rv tilt">
         <div class="when">2026.03 – 2026.06</div>
-        <p><span data-l="zh">跟踪军工上市公司，搭建标准化数据库，参与深度报告与周报撰写。</span><span data-l="en">Tracked listed defense names, built standardized databases, contributed to deep-dives and weeklies.</span></p>
+        <h3><span data-l="zh">申万宏源证券</span><span data-l="en">Shenwan Hongyuan Securities</span></h3>
+        <div class="role"><span data-l="zh">行业研究 · 军工组</span><span data-l="en">Industry Research · Defense Industry Group</span></div>
+        <ul data-l="zh">
+          <li>跟踪西部超导、中航西飞、图南股份等军工上市公司，建立并维护标准化的经营、财务与业务指标数据库</li>
+          <li>基于公告、财报与行业资料，深入研究产业链结构、竞争格局与公司基本面，为团队投资观点提供支持</li>
+          <li>参与行业深度报告、周报与季报撰写，负责数据收集、图表制作与部分分析内容</li>
+          <li>用 Excel 整理、核对与分析公司及行业数据，维护定期更新的跟踪文件，帮助团队及时捕捉业绩变化</li>
+        </ul>
+        <ul data-l="en">
+          <li>Tracked listed defense companies (Western Superconducting, AVIC Xi'an Aircraft, Tunan Co.), building and maintaining a standardized database of operating, financial and business metrics</li>
+          <li>Researched supply chains, competitive landscape and fundamentals from filings, financial reports and industry materials to inform the team's investment views</li>
+          <li>Contributed data collection, charts and written analysis to deep-dive, weekly and quarterly reports</li>
+          <li>Organized, verified and analyzed data in Excel, maintaining tracking files that helped the team spot performance changes early</li>
+        </ul>
       </div>
-      <div class="card glass c2 rv tilt">
-        <div class="logo-chip" style="background:linear-gradient(135deg,#b91c1c,#f97316)">华</div>
-        <h3><span data-l="zh">华创证券</span><span data-l="en">Huachuang Securities</span></h3>
-        <div class="role"><span data-l="zh">研究所 · 机械组</span><span data-l="en">Research · Machinery</span></div>
+      <div class="card glass c3 rv tilt">
         <div class="when">2025.04 – 2025.08</div>
-        <p><span data-l="zh">参与 6 篇行业深度报告，用 Wind 搭建行业比较框架。</span><span data-l="en">6 deep-dive reports; built an industry comparison framework in Wind.</span></p>
+        <h3><span data-l="zh">华创证券</span><span data-l="en">Huachuang Securities</span></h3>
+        <div class="role"><span data-l="zh">研究所 · 机械组</span><span data-l="en">Research Institute · Machinery Group</span></div>
+        <ul data-l="zh">
+          <li>参与撰写 6 篇行业深度报告，负责数据收集与行业趋势分析</li>
+          <li>使用 Wind 数据库提取数据并回测，搭建行业比较分析框架</li>
+          <li>跟踪上市公司财报与政策动态，分析行业景气周期，为研究员决策提供支持</li>
+          <li>整理会议纪要，维护并更新内部数据库</li>
+        </ul>
+        <ul data-l="en">
+          <li>Contributed to 6 in-depth industry reports, covering data collection and trend analysis</li>
+          <li>Extracted and backtested data in Wind to build an industry comparison framework</li>
+          <li>Tracked company results and policy developments, analyzing industry cycles to support analysts</li>
+          <li>Prepared meeting minutes and maintained internal databases</li>
+        </ul>
       </div>
       <div class="card glass c3 rv tilt">
-        <div class="logo-chip" style="background:linear-gradient(135deg,#0e7490,#22d3ee)">天</div>
-        <h3><span data-l="zh">天风证券资管</span><span data-l="en">Tianfeng Securities AM</span></h3>
-        <div class="role"><span data-l="zh">营销管理部</span><span data-l="en">Marketing Management</span></div>
         <div class="when">2024.08 – 2024.09</div>
-        <p><span data-l="zh">合作撰写固收信用周报，独立负责数据与图表。</span><span data-l="en">Co-authored fixed income &amp; credit weeklies; owned data and charts.</span></p>
+        <h3><span data-l="zh">天风证券资产管理</span><span data-l="en">Tianfeng Securities Asset Management</span></h3>
+        <div class="role"><span data-l="zh">营销管理部</span><span data-l="en">Marketing Management Department</span></div>
+        <ul data-l="zh">
+          <li>编写日报、周报，跟踪宏观经济、货币政策、股价及重点公司动态</li>
+          <li>与宏观研究员合作撰写固收与信用市场周报，独立完成数据搜集、图表制作与质量核查</li>
+          <li>参与路演材料与公众号宣传海报制作</li>
+          <li>审核企业股权结构、家族企业属性与反垄断合规资料；协助公募基金日常运营</li>
+        </ul>
+        <ul data-l="en">
+          <li>Compiled daily and weekly reports on macro, monetary policy, stock prices and key company news</li>
+          <li>Co-authored fixed income &amp; credit market weeklies with macro researchers, independently handling data, charts and quality checks</li>
+          <li>Produced roadshow decks and promotional posters</li>
+          <li>Reviewed ownership structures and antitrust compliance; supported public mutual fund operations</li>
+        </ul>
       </div>
       <div class="card glass c3 rv tilt">
-        <div class="logo-chip" style="background:linear-gradient(135deg,#9f1239,#e11d48)">中</div>
-        <h3><span data-l="zh">中国银行</span><span data-l="en">Bank of China</span></h3>
-        <div class="role"><span data-l="zh">信贷市场部</span><span data-l="en">Credit Markets</span></div>
         <div class="when">2024.01 – 2024.02</div>
-        <p><span data-l="zh">中小企业信贷资料审核，测算营收与抵押物价值。</span><span data-l="en">SME credit review; assessed revenue and collateral value.</span></p>
+        <h3><span data-l="zh">中国银行</span><span data-l="en">Bank of China</span></h3>
+        <div class="role"><span data-l="zh">信贷市场部</span><span data-l="en">Credit Market Department</span></div>
+        <ul data-l="zh">
+          <li>协助客户经理接待客户、提供贷款申请材料，协调审批与放款流程</li>
+          <li>协助收集客户征信信息，参与信贷平台建设与信息录入</li>
+          <li>审核中小企业营业执照、盈利证明、资产评估报告等材料的完整性与真实性，调查股权结构</li>
+          <li>审核企业银行流水，测算实际年营业收入与抵押资产价值，核查交易记录</li>
+        </ul>
+        <ul data-l="en">
+          <li>Assisted managers with client reception, loan applications, and coordination of approvals and disbursements</li>
+          <li>Collected client credit information and supported data entry for the credit platform</li>
+          <li>Reviewed SME licenses, profit certificates and appraisal reports for completeness and authenticity; investigated ownership structures</li>
+          <li>Analyzed bank statements to calculate actual annual revenue and collateral value; verified transaction records</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -227,7 +270,6 @@
   <!-- EDUCATION -->
   <section id="edu" class="wrap">
     <div class="kicker rv"><span data-l="zh">教育背景</span><span data-l="en">Education</span></div>
-    <h2 class="rv"><span data-l="zh">金融为底，科技为翼。</span><span data-l="en">Finance meets technology.</span></h2>
     <div class="bento">
       <div class="card glass c3 rv tilt">
         <div class="when">2026 – 2028</div>
@@ -262,7 +304,6 @@
   <!-- SKILLS -->
   <section id="skills" class="wrap">
     <div class="kicker rv"><span data-l="zh">技能</span><span data-l="en">Toolkit</span></div>
-    <h2 class="rv"><span data-l="zh">趁手的工具。</span><span data-l="en">The toolkit.</span></h2>
     <div class="chips rv">
       <span class="chip glass">Python</span><span class="chip glass">Wind</span>
       <span class="chip glass"><span data-l="zh">同花顺</span><span data-l="en">THS</span></span>
@@ -278,8 +319,7 @@
   <!-- CONTACT -->
   <section id="contact" class="wrap">
     <div class="contact glass rv">
-      <h2><span data-l="zh">聊聊吧。</span><span data-l="en">Let's talk.</span></h2>
-      <p class="lead"><span data-l="zh">行业研究 · 投资研究 · 金融科技</span><span data-l="en">Equity Research · Investment Research · FinTech</span></p>
+      <div class="kicker" style="margin-bottom:30px"><span data-l="zh">联系方式</span><span data-l="en">Contact</span></div>
       <div class="rows">
         <a class="row" href="mailto:ruoqiy589@gmail.com"><div><small>Email</small><b>ruoqiy589@gmail.com</b></div><button class="copy" data-copy="ruoqiy589@gmail.com" type="button">Copy</button></a>
         <a class="row" href="tel:+6586305499"><div><small><span data-l="zh">新加坡</span><span data-l="en">Singapore</span></small><b>+65 8630 5499</b></div><button class="copy" data-copy="+6586305499" type="button">Copy</button></a>
@@ -400,7 +440,7 @@ document.querySelectorAll('.copy').forEach(function(b){
   var blob=new THREE.Mesh(new THREE.IcosahedronGeometry(1.35,reduce?32:96),mat);scene.add(blob);
 
   // floating glass bubbles
-  var bubbles=[],bm=mat.clone();bm.uniforms=uniforms;
+  var bubbles=[],bm=new THREE.ShaderMaterial({uniforms:{uTime:uniforms.uTime,uAmp:{value:.07},uMouse:uniforms.uMouse},transparent:true,vertexShader:mat.vertexShader,fragmentShader:mat.fragmentShader});
   [[-2.6,1.4,-1.5,.28],[2.9,-1.6,-1,.36],[-2.2,-1.9,.2,.18],[1.6,2.1,-2,.22]].forEach(function(b){
     var m=new THREE.Mesh(new THREE.IcosahedronGeometry(b[3],24),bm);m.position.set(b[0],b[1],b[2]);m.userData.o=m.position.clone();m.userData.s=Math.random()*6;scene.add(m);bubbles.push(m)});
 
